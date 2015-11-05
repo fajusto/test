@@ -15,7 +15,7 @@
 		<input id="formRow" type="text" name="email" placeholder="E-mail" maxlength="70"/><br>
 		<input id="formRow" type="number" name="cpf" placeholder="CPF" maxlength="10"/><br>
 		<input id="formRow" type="number" name="birthday" placeholder="Birthday" maxlength="10"/><br>
-		<input name="Is_active" type="checkbox" value="1"/>Está ativo<br>
+		<input name="Is_active" type="checkbox" value="1"/>Is active!<br>
 	</td>
 </form>
 </body>
