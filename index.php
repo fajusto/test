@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title>Test</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 	<style>
 	#formRow {
 		margin: 2px;
@@ -17,23 +18,67 @@
 		<input name="Is_active" type="checkbox" value="1"/>Is active!<br>
 		<input type="submit" value="Submit">
 </form>
-<table>
+<table class="table">
 	<tr>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>E-mail</th>
-				<th>CPF</th>
-				<th>Birthday</th>
-				<th>Is active</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>E-mail</th>
+		<th>CPF</th>
+		<th>Birthday</th>
+		<th>Is active</th>
 	</tr>
-	<tr>
-				<td>João</td>
-				<td>Silva</td>
-				<td>joao@silva.com</td>
-				<td>22265425414</td>
-				<td>15/08/1998</td>
-				<td>1</td>
-	</tr>
+
+	<?php
+		include_once('inc/conexao.php');
+		$sql = "SELECT firstName, lastName, email, cpf, birthday, Is_active FROM usuarios";
+		$result = $conn->query($sql);
+
+		if ($result->num_rows > 0) {
+		    // echo "<table>";
+		    while($row = $result->fetch_assoc()) {
+		        echo "<tr><td>".$row["firstName"]."</td><td>".$row["lastName"]."</td><td>".$row["email"]."</td><td>".$row["cpf"]."</td><td>".$row["birthday"]."</td><td>".$row["Is_active"]."</td></tr>";
+		    }
+		    // echo "</table>";
+		} else {
+		    echo "0 results";
+		}
+		$conn->close();
+	?>
 </table>
+	<table class="table">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>E-mail</th>
+			<th>CPF</th>
+			<th>Birthday</th>
+			<th>Is active</th>
+		</tr>
+		<tr>
+			<td>João</td>
+			<td>Silva</td>
+			<td>joao@silva.com</td>
+			<td>22265425414</td>
+			<td>15/08/1998</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>Maria</td>
+			<td>Silva</td>
+			<td>joana@silva.com</td>
+			<td>22265425414</td>
+			<td>15/08/1998</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>Joana</td>
+			<td>Silva</td>
+			<td>joana@silva.com</td>
+			<td>22265425414</td>
+			<td>15/08/1998</td>
+			<td>1</td>
+		</tr>
+	</table>
+
 </body>
 </html>

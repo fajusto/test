@@ -11,10 +11,14 @@
 			$cpf=$_POST['cpf'];
 			$birthday=$_POST['birthday'];
 			$Is_active=$_POST['Is_active'];
-			$sql = mysql_query("INSERT INTO usuarios (firstName, lastName, email, cpf, birthday, Is_active)
-				VALUES('$firstName', '$lastName', '$email', '$cpf', '$birthday', '$Is_active')");
+			$sql = "INSERT INTO usuarios (firstName, lastName, email, cpf, birthday, Is_active)
+				VALUES('$firstName', '$lastName', '$email', '$cpf', '$birthday', '$Is_active')";
 			echo "<pre>";
 			var_dump($_POST);
+			$conn->close();
+			$redirect = "http://localhost/test/index.php";
+			header("location:$redirect");
+
 		?>
 	</body>
 </html>
