@@ -36,7 +36,21 @@
 		if ($result->num_rows > 0) {
 		    // echo "<table>";
 		    while($row = $result->fetch_assoc()) {
-		        echo "<tr><td>".$row["firstName"]."</td><td>".$row["lastName"]."</td><td>".$row["email"]."</td><td>".$row["cpf"]."</td><td>".$row["birthday"]."</td><td>".$row["Is_active"]."</td></tr>";
+	?>
+	<tr>
+	<td><?= $row["firstName"] ?></td>
+	<td><?= $row["lastName"] ?></td>
+	<td><?= $row["email"] ?></td>
+	<td><?= $row["cpf"] ?></td>
+	<td><?= $row["birthday"] ?></td>
+	<td>
+		<?php 
+			echo $row["Is_active"];
+		?>
+	</td>
+</tr>
+	<?php	        
+		        // echo "<tr><td>".$row["firstName"]."</td><td>".$row["lastName"]."</td><td>".$row["email"]."</td><td>".$row["cpf"]."</td><td>".$row["birthday"]."</td><td>".$row["Is_active"]."</td></tr>";
 		    }
 		    // echo "</table>";
 		} else {
