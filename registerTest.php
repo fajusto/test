@@ -16,8 +16,9 @@
 			$email=$_POST['email'];
 			$cpf=$_POST['cpf'];
 			$birthday=$_POST['birthday'];
-			$sql = mysql_query("INSERT INTO usuarios (firstName, lastName, email, cpf, birthday)
-				VALUES('$firstName', '$lastName', '$email', '$cpf', '$birthday')");
+			$Is_active=$_POST['Is_active'];
+			$sql = mysql_query("INSERT INTO usuarios (firstName, lastName, email, cpf, birthday, Is_active)
+				VALUES('$firstName', '$lastName', '$email', '$cpf', '$birthday', '$Is_active')");
 		?>
 	</body>
 </html>
