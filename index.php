@@ -32,7 +32,7 @@
 
 		<?php
 			include_once('inc/conexao.php');
-			$sql =  "SELECT firstName, lastName, email, cpf, birthday, Is_active WHERE id=' . $_GET['id']  .  ' FROM usuarios";
+			$sql = "SELECT firstName, lastName, email, cpf, birthday, Is_active FROM usuarios";
 			$result = $conn->query($sql);
 
 			if ($result->num_rows > 0) {
@@ -55,7 +55,7 @@
 		?>
 	</td>
 		<td>
-			 <a href="edit.php?id=<?= $row['id'] ?>&partiuSextaFeira=Simmmmmm">Edit<a>
+			 <a href="edit.php?id=<?= $row['id'] ?>">Edit<a>
 			<a href="delete.php?id=<?= $row['id'] ?>">Delete<a>
 		</td>
 </tr>

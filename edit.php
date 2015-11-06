@@ -5,10 +5,10 @@
 </head>
 <body>
 <?php
-	echo $_GET["partiuSextaFeira"];
-	echo "</br>";
-	echo $_GET["id"];
+$sql =  "SELECT firstName, lastName, email, cpf, birthday, Is_active WHERE id=' . $_GET['id']  .  ' FROM usuarios";
+			$result = $conn->query($sql);
 ?>
+
 <form name="CustomerForm" method="post" action="store.php">
 		<input id="formRow" type="text" name="firstName" placeholder="First Name" maxlength="50"/><br>
 		<input id="formRow" type="text" name="lastName" placeholder="Last Name" maxlength="50"/><br>
