@@ -4,7 +4,12 @@
 	<title></title>
 </head>
 <body>
-<form name="CustomerForm" method="post" action="registerTest.php">
+<?php
+	echo $_GET["partiuSextaFeira"];
+	echo "</br>";
+	echo $_GET["id"];
+?>
+<form name="CustomerForm" method="post" action="store.php">
 		<input id="formRow" type="text" name="firstName" placeholder="First Name" maxlength="50"/><br>
 		<input id="formRow" type="text" name="lastName" placeholder="Last Name" maxlength="50"/><br>
 		<input id="formRow" type="text" name="email" placeholder="E-mail" maxlength="70"/><br>
