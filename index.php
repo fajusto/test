@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Test</title>
@@ -26,28 +27,37 @@
 		<th>CPF</th>
 		<th>Birthday</th>
 		<th>Is active</th>
+		<th>Action</th>
 	</tr>
 
-	<?php
-		include_once('inc/conexao.php');
-		$sql = "SELECT firstName, lastName, email, cpf, birthday, Is_active FROM usuarios";
-		$result = $conn->query($sql);
+		<?php
+			include_once('inc/conexao.php');
+			$sql = "SELECT firstName, lastName, email, cpf, birthday, Is_active FROM usuarios";
+			$result = $conn->query($sql);
 
-		if ($result->num_rows > 0) {
-		    // echo "<table>";
-		    while($row = $result->fetch_assoc()) {
-	?>
+			if ($result->num_rows > 0) {
+			    // echo "<table>";
+			    while($row = $result->fetch_assoc()) {
+		?>
 	<tr>
-	<td><?= $row["firstName"] ?></td>
-	<td><?= $row["lastName"] ?></td>
-	<td><?= $row["email"] ?></td>
-	<td><?= $row["cpf"] ?></td>
-	<td><?= $row["birthday"] ?></td>
+		<td><?= $row["firstName"] ?></td>
+		<td><?= $row["lastName"] ?></td>
+		<td><?= $row["email"] ?></td>
+		<td><?= $row["cpf"] ?></td>
+		<td><?= $row["birthday"] ?></td>
 	<td>
-		<?php 
-			echo $row["Is_active"];
+		<?php
+						if ($row["Is_active"] == "1") {
+			    echo "Sim";
+			} else {
+			    echo "Não";
+			}
 		?>
 	</td>
+		<td>
+			<a href="">Edit<a>
+			<a href="">Delete</a>
+		</td>
 </tr>
 	<?php	        
 		        // echo "<tr><td>".$row["firstName"]."</td><td>".$row["lastName"]."</td><td>".$row["email"]."</td><td>".$row["cpf"]."</td><td>".$row["birthday"]."</td><td>".$row["Is_active"]."</td></tr>";
@@ -58,30 +68,7 @@
 		}
 		$conn->close();
 	?>
-		<tr>
-			<td>João</td>
-			<td>Silva</td>
-			<td>joao@silva.com</td>
-			<td>22265425414</td>
-			<td>15/08/1998</td>
-			<td>1</td>
-		</tr>
-		<tr>
-			<td>Maria</td>
-			<td>Silva</td>
-			<td>joana@silva.com</td>
-			<td>22265425414</td>
-			<td>15/08/1998</td>
-			<td>1</td>
-		</tr>
-		<tr>
-			<td>Joana</td>
-			<td>Silva</td>
-			<td>joana@silva.com</td>
-			<td>22265425414</td>
-			<td>15/08/1998</td>
-			<td>1</td>
-		</tr>
+
 	</table>
 
 </body>
