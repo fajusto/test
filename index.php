@@ -44,16 +44,6 @@
 		}
 		$conn->close();
 	?>
-</table>
-	<table class="table">
-		<tr>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>E-mail</th>
-			<th>CPF</th>
-			<th>Birthday</th>
-			<th>Is active</th>
-		</tr>
 		<tr>
 			<td>João</td>
 			<td>Silva</td>
