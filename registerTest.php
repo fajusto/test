@@ -18,7 +18,7 @@
 			$conn->close();
 			$redirect = "http://localhost/test/index.php";
 			header("location:$redirect");
-
+		mysqli_close($conn);
 		?>
 	</body>
 </html>

@@ -32,7 +32,7 @@
 
 		<?php
 			include_once('inc/conexao.php');
-			$sql = "SELECT firstName, lastName, email, cpf, birthday, Is_active FROM usuarios";
+			$sql = "SELECT id, firstName, lastName, email, cpf, birthday, Is_active FROM usuarios";
 			$result = $conn->query($sql);
 
 			if ($result->num_rows > 0) {
