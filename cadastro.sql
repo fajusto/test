@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 06-Nov-2015 às 17:30
+-- Generation Time: 06-Nov-2015 às 17:57
 -- Versão do servidor: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `birthday` date NOT NULL,
   `Is_active` tinyint(1) NOT NULL,
   `id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `usuarios`
@@ -44,7 +44,9 @@ INSERT INTO `usuarios` (`firstName`, `lastName`, `email`, `cpf`, `birthday`, `Is
 ('FabrÃ­cio', 'Justo', 'fabriciosjjb@gmail.com', '39065395806', '0000-00-00', 0, 1),
 ('FabrÃ­cio', 'Justo', 'fabriciosjjb@gmail.com', '39065395806', '1992-12-16', 0, 2),
 ('Bruna', 'Souza', 'bruba2012catieli@gmail.com', '22255566622', '1993-08-01', 0, 3),
-('Bruna', 'Souza', 'bruba2012catieli@gmail.com', '22255566622', '1993-08-01', 0, 4);
+('Bruna', 'Souza', 'bruba2012catieli@gmail.com', '22255566622', '1993-08-01', 0, 4),
+('Mauricio', 'Justo', 'mauricio.justo@gmail.com', '22255566622', '1993-08-01', 0, 5),
+('Leila', 'Justo', 'mauricio.justo@gmail.com', '22255566622', '1993-08-01', 1, 6);
 
 --
 -- Indexes for dumped tables
@@ -54,6 +56,7 @@ INSERT INTO `usuarios` (`firstName`, `lastName`, `email`, `cpf`, `birthday`, `Is
 -- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`);
 
 --
@@ -64,7 +67,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
