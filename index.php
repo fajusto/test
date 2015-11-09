@@ -45,7 +45,7 @@
 				<th>E-mail</th>
 				<th>CPF</th>
 				<th>Birthday</th>
-				<th>Is active</th>
+				<th>Is active?</th>
 				<th>Action</th>
 			</tr>
 
