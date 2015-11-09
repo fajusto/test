@@ -18,7 +18,7 @@ mysqli_close($conn);
 		<input id="formRow" type="text" name="email" placeholder="E-mail" maxlength="70" value="<?= $usuario['email'] ?>"/><br>
 		<input id="formRow" type="text" name="cpf" placeholder="CPF" maxlength="11" value="<?= $usuario['cpf'] ?>"/><br>
 		<input id="formRow" type="date" name="birthday" placeholder="Birthday" maxlength="10" value="<?= $usuario['birthday'] ?>"/><br>
-		<input type="checkbox" value="1" <?= ($usuario['Is_active'] == 1) ? 'checked="checked"' : '' ?>>Is active!<br>
+		<input name="Is_active" type="checkbox" value="1" <?= ($usuario['Is_active'] == 1) ? 'checked="checked"' : '' ?>>Is active!<br>
 		<input type="submit" value="Submit">
 		<input name="id" type="hidden" value="<?= $usuario['id'] ?>">
 </form>
