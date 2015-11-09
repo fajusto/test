@@ -9,9 +9,17 @@
 			$sql = "INSERT INTO usuarios (firstName, lastName, email, cpf, birthday, Is_active)
 				VALUES('$firstName', '$lastName', '$email', '$cpf', '$birthday', '$Is_active')";
 
-			 	mysqli_query($conn, $sql);
+$redirect = "http://localhost/test/index.php";
 
-			$redirect = "http://localhost/test/index.php";
+			 	if (mysqli_query($conn, $sql)) {
+	     header('Location: index.php');
+	 		//echo 'Updated!';
+	} 
+				else {
+	    echo "Error updating record: " . mysqli_error($conn);
+	}
+
+			
 			header("location:$redirect");
 		mysqli_close($conn);
 ?>
